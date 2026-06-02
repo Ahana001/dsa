@@ -77,9 +77,3 @@ public:
 ```
 
 ---
-
-## 3. Notes
-
-- Brute Force checks every possible subarray.
-- Kadane’s Algorithm optimizes by resetting negative sums.
-- Your original comments are preserved exactly as written.
