@@ -44,4 +44,4 @@ for(int i = 0; i < n; i++){
 ```
 
 #### Time Complexity: O(n/2) + O(n*n/2) ~ O(n²) 
-#### Space Complexity: O(n²)
+#### Space Complexity: O(1)
