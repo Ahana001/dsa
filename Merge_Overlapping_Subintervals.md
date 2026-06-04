@@ -61,7 +61,7 @@ for(int i=0; i<n; i++){
     }
 
     result.push_back({start, end});
-    i = j - 1;
+    i = j - 1; // If set to i then remove i++ in loop because element that should be checked is already set no meaning of i++
 }
 ```
 
