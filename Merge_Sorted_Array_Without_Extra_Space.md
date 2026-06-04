@@ -28,6 +28,7 @@ for(int i=0; i<result.size(); i++){
 ```
 
 **Time Complexity:** `O(2(m + n))` ~ `O(m + n)`
+
 **Space Complexity:** `O(m + n)`
 
 ---
@@ -58,6 +59,7 @@ for(int j=0; j<n; j++){
 ```
 
 **Time Complexity:** `O(m * n)`
+
 **Space Complexity:** `O(1)`
 
 ---
@@ -140,4 +142,5 @@ while (gap > 0) {
 ```
 
 **Time Complexity:** `O((m + n) log(m + n))`  
+
 **Space Complexity:** `O(1)`
