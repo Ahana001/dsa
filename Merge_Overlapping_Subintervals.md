@@ -1,9 +1,12 @@
 ## Brute Force Approach
 
 ```cpp
-    int n = intervals.size();
-    vector<vector<int>> result;
-    for(int i=0; i<n; i++){
+int n = intervals.size();
+vector<vector<int>> result;
+
+sort(intervals.begin(), intervals.end());
+
+for(int i=0; i<n; i++){
         int start = intervals[i][0];
         int end = intervals[i][1];
 
@@ -22,6 +25,7 @@
         result.push_back({start, end});
         
     }
+
 ```
 
 ### Time Complexity
@@ -42,6 +46,10 @@ O(n)
 
 
 ```cpp
+int n = intervals.size();
+vector<vector<int>> result;
+sort(intervals.begin(), intervals.end());
+
 for(int i=0; i<n; i++){
     int start = intervals[i][0];
     int end = intervals[i][1];
