@@ -42,6 +42,7 @@ for(int i=0; i<=n; i++){
     }
 }
 ```
+
 ### Time Complexity
 
 `O(2n)`
@@ -51,6 +52,25 @@ for(int i=0; i<=n; i++){
 `O(n)`
 
 ---
+
+## Optimal 
+
+```cpp
+for(int i=0; i<n; i++){
+    if(count[i] == 1){
+        cout << "The duplicate number is: " << count[i];
+        break;
+    }
+}
+```
+
+### Time Complexity
+
+`O(n)`
+
+### Space Complexity
+
+`O(n)`
 
 ## Invalid Approach
 
