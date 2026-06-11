@@ -114,8 +114,8 @@ slow = nums[slow];
 fast = nums[nums[fast]];
 
 while(slow != fast){
-    slow = nums[slow];       // 3, 2
-    fast = nums[nums[fast]]; // 2, 2
+    slow = nums[slow];       
+    fast = nums[nums[fast]]; 
 }
 
 slow = nums[0];
