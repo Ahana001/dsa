@@ -157,12 +157,16 @@ O(M log M)
 Initially:
 
 ```cpp
-(divCount[i] * (divCount[i]-1)) / 2
+for (int i = maxNum; i >= 1; i--) {
+    long long pairs = (divCount[i] * (divCount[i] - 1)) / 2;
+    for (int j = i + i; j <= maxNum; j += i) {
+        pairs -= divCount[j];
+    }
+        divCount[i] = pairs;
+}
 ```
 
 ### Complexity
-
-Same divisor pattern:
 
 ```
 O(M log M)
