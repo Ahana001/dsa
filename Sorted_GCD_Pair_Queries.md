@@ -230,7 +230,7 @@ Q = number of queries
 Total:
 
 \[
-O(n)+O(n)+O(M\log M)+O(M\log M)+O(M)+O(Q\log M)
+O(n)+O(n)+O(Mlog M)+O(Mlog M)+O(M)+O(Qlog M)
 \]
 
 Ignoring smaller terms:
