@@ -32,6 +32,8 @@ int n = matrix[0].size();
 --- 
 
 ## Brute-V2 Approach
+
+```cpp
 // for (int i = 0; i < m; i++) {
 //     if (matrix[i][0] > target)
 //         continue;
@@ -43,14 +45,16 @@ int n = matrix[0].size();
 //         }
 //     }
 // }
+```
 
 ## Time Complexity: O(m * n)
 ## Space Complexity: O(1)
 
 ---
 
-```cpp
 ## Better Approach
+
+```cpp
 // for (int i = 0; i < m; i++) {
 //     if (matrix[i][0] <= target && target <= matrix[i][n - 1]) {
 //         // Binary Search
