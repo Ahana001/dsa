@@ -98,9 +98,11 @@ public:
 
 ## Complexity Comparison
 
-| Approach                     | Time Complexity | Space Complexity |
-| ---------------------------- | --------------- | ---------------- |
-| Brute Force                  | O(n²)           | O(1)             |
-| Hash Map                     | O(n)            | O(n)             |
-| Boyer-Moore Voting Algorithm | O(n)            | O(1)             |
+| Approach                                    | Time Complexity | Space Complexity | Works Without Guarantee |
+| ------------------------------------------- | --------------- | ---------------- | ----------------------- |
+| Brute Force                                 | O(n²)           | O(1)             | ✅ Yes                   |
+| Hash Map                                    | O(n)            | O(n)             | ✅ Yes                   |
+| Boyer-Moore Voting Algorithm + Verification | O(n)            | O(1)             | ✅ Yes                   |
+| Boyer-Moore Voting Algorithm Only           | O(n)            | O(1)             | ❌ No                    |
+
 
