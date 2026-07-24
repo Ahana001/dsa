@@ -123,6 +123,43 @@ public:
     int uniquePaths(int m, int n) {
         vector<int> prev(n, 0);
 
+        for (int i = m - 1; i >= 0; i--) {
+
+            vector<int> curr(n, 0);
+
+            for (int j = n - 1; j >= 0; j--) {
+
+                if (i == m - 1 && j == n - 1) {
+                    curr[j] = 1;
+                    continue;
+                }
+
+                int up = 0;
+                int left = 0;
+
+                if (i < m - 1)
+                    up = prev[j];
+
+                if (j < n - 1)
+                    left = curr[j + 1];
+
+                curr[j] = up + left;
+            }
+
+            prev = curr;
+        }
+
+        return prev[0];
+    }
+};
+```
+
+```cpp
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        vector<int> prev(n, 0);
+
         for (int i = 0; i < m; i++) {
 
             vector<int> curr(n, 0);
