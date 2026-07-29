@@ -51,7 +51,7 @@ public:
 };
 ```
 
-- **Time Complexity:** `O(n)`
+- **Time Complexity:** `O(2n)`
 - **Space Complexity:** `O(1)`
 
 ---
