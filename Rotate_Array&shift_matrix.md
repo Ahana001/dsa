@@ -62,7 +62,7 @@ https://leetcode.com/problems/shift-2d-grid/description/?envType=daily-question&
 
 ## Time Complexity
 
-- **Time Complexity:** `O(k) + O(n-k) + O(k) = O(n)`
+- **Time Complexity:** `O(k) + O(m * n - k) + O(k) = O(m * n)`
 - **Space Complexity:** `O(k)`
 
 ## Code
@@ -86,45 +86,6 @@ public:
         for (int i = 0; i < k; i++) {
             nums[i] = temp[i];
         }
-    }
-};
-```
-
----
-
-# Rotate Array - Approach 2 (Reversal Algorithm)
-
-## Time Complexity
-
-- **Time Complexity:** `O(n)`
-- **Space Complexity:** `O(1)`
-
-## Code
-
-```cpp
-class Solution {
-public:
-    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
-        int m = grid.size();    // rows
-        int n = grid[0].size(); // columns
-        vector<vector<int>> ans(m, vector<int>(n));
-        int total = m * n;
-        k = k % total;
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                int oldIndex = i * n + j;
-
-                int newIndex = (oldIndex + k) % total;
-
-                int newRow = newIndex / n;
-                int newCol = newIndex % n;
-
-                ans[newRow][newCol] = grid[i][j];
-            }
-        }
-
-        return ans;
     }
 };
 ```
