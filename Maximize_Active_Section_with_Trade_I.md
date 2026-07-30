@@ -4,7 +4,7 @@ https://leetcode.com/problems/maximize-active-section-with-trade-i/description/?
 
 ## Time Complexity
 
-* **Time Complexity:** O(n)
+* **Time Complexity:** O(n) + O(n) + O(k) = O(n)
 * **Space Complexity:** O(n)
 
 ## Code
@@ -49,7 +49,7 @@ public:
 
 ## Time Complexity
 
-* **Time Complexity:** O(n)
+* **Time Complexity:** O(n) + O(n) = O(n)
 * **Space Complexity:** O(1)
 
 ## Code
