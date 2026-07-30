@@ -1,3 +1,5 @@
+https://leetcode.com/problems/maximize-active-section-with-trade-i/description/?envType=daily-question&envId=2026-07-21
+
 # Storing Zero Blocks In Vector
 
 ## Time Complexity
