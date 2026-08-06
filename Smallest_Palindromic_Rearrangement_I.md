@@ -8,6 +8,19 @@ https://leetcode.com/problems/smallest-palindromic-rearrangement-i/description/?
 1. `sort(begin(s), begin(s) + mid)` → **O((n/2) log(n/2)) = O(n log n)**
 2. `for (int i = 0; i < mid; i++)` → **O(n/2) = O(n)**
 
+### Note
+Original: `baaaab`
+
+First half: `baa`
+
+After sorting: `aab`
+
+Mirror it:
+
+`aab` + `baa` = `aabbaa`
+
+If the input is not a palindrome (example: `aaaabbbb`), this approach will not work because the second half does not match the first half.
+
 ### Time Complexity
 - **O(n log n)**
 
