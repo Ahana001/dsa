@@ -110,3 +110,65 @@ public:
     }
 };
 ```
+
+---
+
+https://leetcode.com/problems/number-of-unique-xor-triplets-ii/description/?envType=daily-question&envId=2026-07-24
+
+## Time Complexity
+
+- **Pair XOR Computation:** `O(n²)`
+- **Triplet XOR Generation:** `O(2048 × n) = O(n)` (2048 is a constant)
+- **Counting Unique XORs:** `O(2048) = O(1)`
+
+**Overall Time Complexity:** **`O(n²)`**
+
+## Space Complexity
+
+- `pair_xor[2048]`
+- `triplet_xor[2048]`
+
+**Overall Space Complexity:** **`O(1)`** (constant extra space)
+
+## Code
+
+```cpp
+class Solution {
+public:
+    int uniqueXorTriplets(vector<int>& nums) {
+        const int max_xor = 2048;
+
+        vector<bool> pair_xor(max_xor, false);
+        vector<bool> triplet_xor(max_xor, false);
+
+        int n = nums.size();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                pair_xor[nums[i] ^ nums[j]] = true;
+            }
+        }
+
+        for (int x = 0; x < max_xor; x++) {
+            if (!pair_xor[x]) continue;
+            for (int v : nums) {
+                triplet_xor[x ^ v] = true;
+            }
+        }
+
+        int count = 0;
+        for (int i = 0; i < max_xor; i++) {
+            if (triplet_xor[i]) count++;
+        }
+
+        return count;
+    }
+};
+```
+
+## Summary
+
+| Complexity | Value |
+|------------|-------|
+| **Time Complexity** | **O(n²)** |
+| **Space Complexity** | **O(1)** |
