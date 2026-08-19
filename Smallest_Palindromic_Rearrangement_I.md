@@ -90,3 +90,92 @@ vector<int> freq(26, 0);
 }
 };
 ```
+
+https://leetcode.com/problems/smallest-palindromic-rearrangement-ii/description/?envType=daily-question&envId=2026-07-29
+
+## Better Approach
+
+### Time Complexity: O(n × 26 × 26 × n)
+### Space Complexity: O(n)
+
+```cpp
+class Solution {
+public:
+    long long nCr(int n, int r, int k) {
+        r = min(r, n - r);
+        long long sum = 1;
+        for (int i = 1; i <= r; i++) {
+            sum *= (n - i + 1);
+            sum /= i;
+
+            if (sum > k) {
+                return k;
+            }
+        }
+        return sum;
+    }
+    long long countWays(vector<int>& half, int total, int k) {
+        long long ways = 1;
+
+        for (int i = 0; i < 26; i++) {
+            if (half[i]) {
+                ways *= nCr(total, half[i], k);
+
+                if (ways >= k)
+                    return k;
+
+                total -= half[i];
+            }
+        }
+
+        return ways;
+    }
+    string smallestPalindrome(string s, int k) {
+        vector<int> freq(26, 0);
+        vector<int> half(26, 0);
+        int n = s.size();
+        string result = "";
+        char mid = '1';
+        for (char c : s) {
+            freq[c - 'a']++;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            half[i] = freq[i] / 2;
+            if (freq[i] % 2 == 1) {
+                mid = i + 'a';
+            }
+        }
+
+        for (int pos = 0; pos < n / 2; pos++) {
+            for (int i = 0; i < 26; i++) {
+                if (half[i]) {
+                    half[i]--; // set char at pos now checking other char and
+                               // their ways
+                    int total = n / 2 - pos - 1;
+                    long long ways = countWays(half, total, k);
+
+                    if (ways >= k) {
+                        result += i + 'a';
+                        break;
+                    }
+
+                    k -= ways;
+                    half[i]++;
+                }
+            }
+        }
+
+        if (result.size() != (n / 2)) {
+            return "";
+        }
+        string ans = result;
+        if (mid != '1') {
+            ans += mid;
+        }
+        reverse(result.begin(), result.end());
+        ans += result;
+        return ans;
+    }
+};
+```
